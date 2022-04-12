@@ -24,7 +24,7 @@ Il est difficile d'ouvrir les fichiers .cpp et .h directement à partir de Ardui
 
 
 ## Notes diverses
-###Séance 3
+### Séance 3
 J'ai commencé à coder tout sous un seul et même fichier classes.cpp avant de le scinder en .h et .cpp, ce qui explique la présence de 3 fichiers.
 Classes.cpp est une ébauche. Les fichiers les plus avancés sont dans Mes_Classes et compilent via test_mes_classes.  
 

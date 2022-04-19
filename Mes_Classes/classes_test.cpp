@@ -1,7 +1,6 @@
 #include "classes.h"
 
 
-
 void Capteur::setPIN(int pin){
     this->PIN = pin; 
 }
@@ -15,6 +14,11 @@ int Capteur::getPin(){
 }
 
 
+
+/* _________________________________________________________
+   __________________CAPTEUR TEMPERATURE____________________
+   _________________________________________________________*/
+
 Capteur_Temp::Capteur_Temp(int pin) : Capteur(pin){
     temp =0.0;
 }
@@ -26,13 +30,56 @@ void Capteur_Temp::mesurerTempe(){
     this->temp = (1.0/(log(R/R0)/B+1/298.15)-273.15);
 }
 
-float Capteur_Temp::getValue(){
+float Capteur_Temp::getValue1(){
     return this->temp;
 }
 
 
 
+/* _________________________________________________________
+   __________________CAPTEUR HUMIDITE ______________________
+   _________________cf DHT nonblocking______________________*/
 
+Capteur_Humid::Capteur_Humid(int pin) : Capteur(pin){
+    humidity = 0.0 ;
+    temperature = 0.0 ;
+}
+
+void Capteur_Humid::mesurerHumid(){
+    float value = analogRead(this->PIN);
+    this->temperature = value/(10.0);
+}
+
+void Capteur_Humid::mesurerTemperature(){
+    float value = analogRead(this->PIN);
+    this->temperature = value/(10.0);
+}
+
+float Capteur_Humid::getValue2(){
+    return this->humidity ;
+}
+
+float Capteur_Humid::getValue1(){
+    return this->temperature ;
+}
+
+
+/* _________________________________________________________
+   __________________CAPTEUR LUMIERE________________________
+   _________________ ______________________*/
+
+Capteur_Lumin::Capteur_Lumin(int pin) : Capteur(pin){
+    luminosity = 0.0 ;
+}
+
+void Capteur_Lumin::mesurerLumin(){
+    float value = analogRead(this->PIN);
+    this->luminosity = value ;
+}
+
+float Capteur_Lumin::getValue1(){
+    return this->luminosity ;
+}
 
 // Je commente le reste pour dékà essayer de faire marcher les 
 // capteurs

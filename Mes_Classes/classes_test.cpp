@@ -81,45 +81,62 @@ float Capteur_Lumin::getValue1(){
     return this->luminosity ;
 }
 
-// Je commente le reste pour dékà essayer de faire marcher les 
-// capteurs
-/*
+/* _________________________________________________________
+   __________________SERVO-MOTEURS_____________
+   _________________ ______________________*/
 
 
-class Actuator {
-    protected:
-    bool state;
+void My_Servo::Init(){
+    this->connected = false;
+    this->min_us = DEFAULT_MIN_PULSE_WIDTH; // Valeur min typique pour une PWM d'un servo en microsecondes
+    this->max_us = DEFAULT_MAX_PULSE_WIDTH;
+    this -> time_on_us = (DEFAULT_MIN_PULSE_WIDTH+DEFAULT_MAX_PULSE_WIDTH)/2; // Duty cycle 50% le servo ne bouge pas
+    this->angle = 0;
+    this->connected = false;
+}
 
-    public:
+My_Servo::My_Servo(){
+    Init();
+}
 
-    bool isOn(){
-        return(this->state);
+
+
+My_Servo::My_Servo(int pin){
+    Init();
+    this->PIN = pin;
+}
+
+int My_Servo::connect(int pin){
+    if (this->connected == false){
+        pinMode(pin,OUTPUT);
+        digitalWrite(pin,LOW);
+        this->PIN =pin;
+        this->connected = true;
     }
+    return pin;
+}
 
-    void set(){
-        this->state=true;
+
+void My_Servo::setAngle(int angle) { // On suppose que l'entrée est entre 0 et 180 degrés
+    if (this->connected == true){
+        angle = constrain(angle, 0, 180);
+        this->angle = angle;
+        this->time_on_us = map(angle, 0,180,min_us,max_us);
+        time_on_us = constrain(time_on_us, min_us,max_us);
+        startWaveform(PIN,time_on_us,REFRESH_INTERVAL-time_on_us,0); // PWM de duty cycle time_on_us
     }
+}
+    
+int My_Servo::getAngle (){
+    return this->angle;
+}
 
-    void reset(){
-        this->state=false;
-    }
-};
+void My_Servo::Open_Blinds(){
+    setAngle(90);
+}
 
-class Ventilateur : public Actuator {
-    protected:
-    short mode; // On peut imaginer qu'un ventilateur peut avoir plusieurs modes de ventilation
-    public:
-    //Constructeur
-    Ventilateur():Actuator(){
-        this->mode = 0; 
-    }
+void My_Servo::Close_Blinds(){
+    setAngle(0);
+}
 
-    void changeMode(short a){
-        this->mode = a; // Faire bien attention a gerer les exceptions ici 
-    }
-};
 
-class Moteur : Actuator{
-
-};
-*/

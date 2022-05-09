@@ -23,8 +23,8 @@ class Capteur {
         int PIN;
 
     public:
-        virtual float getValue1() = 0 ;
-        virtual float getValue2() = 0 ;
+        virtual float getValue() = 0 ;
+        //virtual float getValue2() = 0 ;
         void setPIN(int pin);
         int getPin();
         Capteur(int pin);
@@ -44,7 +44,7 @@ class Capteur_Temp : public Capteur {
     public:
         Capteur_Temp(int pin);
         void mesurerTempe();
-        float getValue1();
+        float getValue();
 };
 
 
@@ -62,7 +62,7 @@ class Capteur_Humid : public Capteur {
         Capteur_Humid(int pin);
         void mesurerHumid() ;
         void mesurerTemperature() ;
-        float getValue1() ; // récupère la valeur de l'a température
+        float getValue() ; // récupère la valeur de l'a température
         float getValue2() ; // récupère la valeur de l'humidité
 } ;
 
@@ -74,12 +74,11 @@ class Capteur_Humid : public Capteur {
    
 class Capteur_Lumin : public Capteur {
     protected : 
-        float luminosity ;
+        float luminosity;
         
     public : 
         Capteur_Lumin(int pin);
-        void mesurerLumin() ;
-        float getValue1() ; // récupère la valeur de la luminosité
+        float getValue() ; // récupère la valeur de la luminosité
 } ;  
    
    

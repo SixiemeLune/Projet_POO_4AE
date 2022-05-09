@@ -30,7 +30,7 @@ void Capteur_Temp::mesurerTempe(){
     this->temp = (1.0/(log(R/R0)/B+1/298.15)-273.15);
 }
 
-float Capteur_Temp::getValue1(){
+float Capteur_Temp::getValue(){
     return this->temp;
 }
 
@@ -59,7 +59,7 @@ float Capteur_Humid::getValue2(){
     return this->humidity ;
 }
 
-float Capteur_Humid::getValue1(){
+float Capteur_Humid::getValue(){
     return this->temperature ;
 }
 
@@ -69,15 +69,14 @@ float Capteur_Humid::getValue1(){
    _________________ ______________________*/
 
 Capteur_Lumin::Capteur_Lumin(int pin) : Capteur(pin){
-    luminosity = 0.0 ;
+    PIN = pin;
+    luminosity = getValue();
 }
 
-void Capteur_Lumin::mesurerLumin(){
+
+float Capteur_Lumin::getValue(){
     float value = analogRead(this->PIN);
     this->luminosity = value ;
-}
-
-float Capteur_Lumin::getValue1(){
     return this->luminosity ;
 }
 
@@ -98,6 +97,8 @@ void My_Servo::Init(){
 My_Servo::My_Servo(){
     Init();
 }
+
+
 
 
 

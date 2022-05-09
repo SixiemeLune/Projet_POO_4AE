@@ -33,11 +33,11 @@ Classes.cpp est une ébauche. Les fichiers les plus avancés sont dans Mes_Class
 
 Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans Test_mes_classes.
 
-#### PINS :
- A0 : Luminosité
- D5 : DHT
- D6 : Servomoteur
-
+Materiel      	       | PIN
+---------------------- | -------------
+Capteur DHT 	       | D5
+Capteur Luminosité     | A0
+Servo Moteur	       | D6
 
 
 ###### Lien Esp :  http://arduino.esp8266.com/stable/package_esp8266com_index.json

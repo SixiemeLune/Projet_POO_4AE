@@ -26,7 +26,17 @@ Il est difficile d'ouvrir les fichiers .cpp et .h directement à partir de Ardui
 ## Notes diverses
 ### Séance 3
 J'ai commencé à coder tout sous un seul et même fichier classes.cpp avant de le scinder en .h et .cpp, ce qui explique la présence de 3 fichiers.
-Classes.cpp est une ébauche. Les fichiers les plus avancés sont dans Mes_Classes et compilent via test_mes_classes.  
+Classes.cpp est une ébauche. Les fichiers les plus avancés sont dans Mes_Classes et compilent via test_mes_classes.
+
+
+### 09/05/2022
+
+Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans Test_mes_classes.
+
+#### PINS :
+ A0 : Luminosité
+ D5 : DHT
+ D6 : Servomoteur
 
 
 

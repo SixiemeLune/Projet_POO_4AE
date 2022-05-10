@@ -9,9 +9,10 @@
 * Humidité 
 * Luminosité
 
-## Actionneurs
-* Moteur (pour des stores pour faire de l'ombre)
-* Ventilateur 
+### Actionneurs
+* Servomoteurs (pour des stores afin de faire de l'ombre)
+
+- - - -
 
 ## Comment tester et compiler son code
 1. Le dossier Mes_Classes contenant les codes sources et header de nos classes persos doit être copié dans l'arborescence ~/(chemin vers arduino)/arduino-1.8.19/libraries
@@ -22,10 +23,12 @@ Il est convenable de déplacer ce répertoire dans le dossier des carnets de cro
 
 3. Lancer la compilation et le téléversement sous Arduino IDE.
 
+- - - -
 
-## Matériel utilisé et PIN associées  
 
-Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans Test_mes_classes.
+## Matériel utilisé et exemple de PINs associées  
+
+Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans main.
 
 Materiel      	       | PIN
 ---------------------- | -------------

@@ -19,7 +19,7 @@
 Il est peu convénient d'ouvrir les fichiers .cpp et .h directement à partir de Arduino IDE. Cependant tout autre IDE est optimal. 
 
 2. Une fois que c'est fait, ouvrir un fichier .ino sous Arduino IDE. Inclure **<classes.h>**, qui est le nom donné au fichier .h associé à l'étape 1. Notre fichier main se prénomme main.ino et est situé dans un répertoire comportant le meme nom.
-Il est convenable de déplacer ce répertoire dans le dossier des carnets de croquis Arduino IDE afin d'y accéder plus facilement.
+Il est convenable de déplacer ce répertoire dans le dossier des carnets de croquis Arduino IDE afin d'y accéder plus facilement. **Par défaut le répertoire du carnet de croquis se situe ici : *~/Arduino***
 
 3. Lancer la compilation et le téléversement sous Arduino IDE.
 

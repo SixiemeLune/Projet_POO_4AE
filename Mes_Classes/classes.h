@@ -3,13 +3,15 @@
 
 #include <Arduino.h>
 #include <math.h>
-#include "core_esp8266_waveform.h" //Waveform used in Servo control
+#include "core_esp8266_waveform.h" // Waveform used in Servo control
 
 //----------CONSTANTES TEMPERATURE ---------------------//
+
 #define R0 100000 //Sert dans le calcul de la température
 #define B 4275 // idem
 
-//----------CONSTANTES ACTUATOR ET SERVO --------------------------//
+//----------CONSTANTES ACTUATOR ET SERVO ---------------//
+
 #define DEFAULT_PIN 13 // GPIO13 corresponds to D7
 #define DEFAULT_MIN_PULSE_WIDTH      1000 // uncalibrated default, the shortest duty cycle sent to a servo
 #define DEFAULT_MAX_PULSE_WIDTH      2000 // uncalibrated default, the longest duty cycle sent to a servo 
@@ -24,7 +26,6 @@ class Capteur {
 
     public:
         virtual float getValue() = 0 ;
-        //virtual float getValue2() = 0 ;
         void setPIN(int pin);
         int getPin();
         Capteur(int pin);
@@ -32,10 +33,10 @@ class Capteur {
 };
 
 
-
 /* _________________________________________________________
    __________________CAPTEUR TEMPERATURE____________________
-   _________________________________________________________*/
+   _________________________________________________________
+*/
 
 class Capteur_Temp : public Capteur {
     protected:
@@ -51,27 +52,17 @@ class Capteur_Temp : public Capteur {
 
 /* _________________________________________________________
    __________________CAPTEUR HUMIDITE ______________________
-   _________________cf DHT nonblocking______________________*/
-
-class Capteur_Humid : public Capteur {
-    protected : 
-        float humidity ;
-        float temperature ;
-        
-    public : 
-        Capteur_Humid(int pin);
-        void mesurerHumid() ;
-        void mesurerTemperature() ;
-        float getValue() ; // récupère la valeur de l'a température
-        float getValue2() ; // récupère la valeur de l'humidité
-} ;
+   _________________cf DHT nonblocking______________________
+   _________________________________________________________
+*/
 
 
 
 /* _________________________________________________________
    __________________CAPTEUR LUMIERE________________________
-   _________________ ______________________*/
-   
+   _________________________________________________________
+*/
+ 
 class Capteur_Lumin : public Capteur {
     protected : 
         float luminosity;
@@ -84,10 +75,10 @@ class Capteur_Lumin : public Capteur {
    
    
 /* _________________________________________________________
-__________________SERVO-MOTEURS_____________
-_________________ ______________________*/
+   __________________SERVO-MOTEURS__________________________
+   _________________________________________________________
+*/
   
-
 
 class My_Servo {
     private:
@@ -109,6 +100,5 @@ class My_Servo {
     void Open_Blinds();
     void Close_Blinds();
 };
-
 
 #endif

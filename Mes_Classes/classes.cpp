@@ -1,5 +1,9 @@
 #include "classes.h"
 
+/* _________________________________________________________
+   _______________________CAPTEUR___________________________
+   _________________________________________________________
+*/
 
 void Capteur::setPIN(int pin){
     this->PIN = pin; 
@@ -13,11 +17,11 @@ int Capteur::getPin(){
     return this->PIN;
 }
 
-
-
 /* _________________________________________________________
    __________________CAPTEUR TEMPERATURE____________________
-   _________________________________________________________*/
+   _________________________________________________________
+*/
+
 
 Capteur_Temp::Capteur_Temp(int pin) : Capteur(pin){
     temp =0.0;
@@ -35,38 +39,19 @@ float Capteur_Temp::getValue(){
 }
 
 
-
 /* _________________________________________________________
    __________________CAPTEUR HUMIDITE ______________________
-   _________________cf DHT nonblocking______________________*/
+   _________________cf DHT nonblocking______________________
+   _________________________________________________________
+*/
 
-Capteur_Humid::Capteur_Humid(int pin) : Capteur(pin){
-    humidity = 0.0 ;
-    temperature = 0.0 ;
-}
 
-void Capteur_Humid::mesurerHumid(){
-    float value = analogRead(this->PIN);
-    this->temperature = value/(10.0);
-}
-
-void Capteur_Humid::mesurerTemperature(){
-    float value = analogRead(this->PIN);
-    this->temperature = value/(10.0);
-}
-
-float Capteur_Humid::getValue2(){
-    return this->humidity ;
-}
-
-float Capteur_Humid::getValue(){
-    return this->temperature ;
-}
 
 
 /* _________________________________________________________
    __________________CAPTEUR LUMIERE________________________
-   _________________ ______________________*/
+   _________________________________________________________
+*/
 
 Capteur_Lumin::Capteur_Lumin(int pin) : Capteur(pin){
     PIN = pin;
@@ -81,8 +66,9 @@ float Capteur_Lumin::getValue(){
 }
 
 /* _________________________________________________________
-   __________________SERVO-MOTEURS_____________
-   _________________ ______________________*/
+   __________________SERVO-MOTEURS__________________________
+   _________________________________________________________
+*/
 
 
 void My_Servo::Init(){
@@ -97,9 +83,6 @@ void My_Servo::Init(){
 My_Servo::My_Servo(){
     Init();
 }
-
-
-
 
 
 My_Servo::My_Servo(int pin){
@@ -139,5 +122,3 @@ void My_Servo::Open_Blinds(){
 void My_Servo::Close_Blinds(){
     setAngle(0);
 }
-
-

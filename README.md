@@ -3,6 +3,7 @@
 > Projet réalisé au cours de notre 4ème Année Automatique et Elecronique dans le cadre du Bureau d'Etudes Programmation Orientée Objet.
 
 > Ce projet est un moniteur d'environnement pour plantes d'intérieur. Il mesure la température, l'humidité et la luminosité de l'environnement proche de la plante. Aussi, à partir d'un certain seuil de température modifiable, l'Arduino commande un servomoteur qui ferme des stores vénitiens pour faire de l'ombre à votre plante bien aimée.  
+> Il est aussi agréable pour votre plante d'avoir une exposition au soleil constante et pas trop importante. C'est pour cela que lorsque les stores sont ouvert, notre système adapte l'angle du store afin de garantir une luminosité constante sur votre belle et majestueuse plante. 
 
 
 ## Liste composants 

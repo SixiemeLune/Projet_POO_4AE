@@ -2,6 +2,8 @@
 ## HATTE Léonie, JUNCK Simon 
 > Projet réalisé au cours de notre 4ème Année Automatique et Elecronique dans le cadre du Bureau d'Etudes Programmation Orientée Objet.
 
+> Ce projet est un moniteur d'environnement pour plantes d'intérieur. Il mesure la température, l'humidité et la luminosité de l'environnement proche de la plante. Aussi, à partir d'un certain seuil de température modifiable, l'Arduino commande un servomoteur qui ferme des stores vénitiens pour faire de l'ombre à votre plante bien aimée.  
+
 
 ## Liste composants 
 ### Capteurs
@@ -22,6 +24,10 @@ Il est peu convénient d'ouvrir les fichiers .cpp et .h directement à partir de
 Il est convenable de déplacer ce répertoire dans le dossier des carnets de croquis Arduino IDE afin d'y accéder plus facilement. **Par défaut le répertoire du carnet de croquis se situe ici : *~/Arduino***
 
 3. Lancer la compilation et le téléversement sous Arduino IDE.
+
+4. Ouvrir le moniteur série d'Arduino IDE.
+
+5. Apprécier les informations optimales pour garantir le bien-être de votre ami(e) plantesque.
 
 - - - -
 

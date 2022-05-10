@@ -5,6 +5,7 @@
 > Ce projet est un moniteur d'environnement pour plantes d'intérieur. Il mesure la température, l'humidité et la luminosité de l'environnement proche de la plante. Aussi, à partir d'un certain seuil de température ou de luminosité modifiable, l'Arduino commande un servomoteur qui ferme des stores vénitiens pour faire de l'ombre à votre plante bien aimée.  
 > Il est aussi agréable pour votre plante d'avoir une exposition au soleil constante. C'est pour cela que lorsque les stores sont ouverts, notre système adapte l'angle du store afin de garantir une luminosité constante sur votre beau et majestueux compagnon enraciné. 
 
+- - - -
 
 ## Liste composants 
 ### Capteurs

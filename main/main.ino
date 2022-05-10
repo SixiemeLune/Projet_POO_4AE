@@ -1,6 +1,9 @@
 #include <classes.h>
 #include "dht_nonblocking.h"
 
+#define TEMPERATURE_SEUIL 30
+#define LUMINOSITE_SEUIL 800
+
 DHT_nonblocking capteur1(14,DHT_TYPE_11);
 My_Servo servo1;
 Capteur_Lumin capteur2(A0);
@@ -97,7 +100,7 @@ void loop() {
     Serial.println(" -- Etat et conseils -- ");
     Serial.println("");
     
-    if (temperature > 30){
+    if (temperature > TEMPERATURE_SEUIL | luminosity > LUMINOSITE_SEUIL){
       servo1.Close_Blinds();
       Serial.println("Les volets sont fermés");
     }

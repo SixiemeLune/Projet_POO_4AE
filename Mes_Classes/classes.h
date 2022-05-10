@@ -86,6 +86,7 @@ class My_Servo {
     protected:
     mutable int PIN;
     bool connected;
+    bool closed;
     int angle;
     int min_us;
     int max_us;
@@ -94,6 +95,7 @@ class My_Servo {
     public:
     My_Servo();
     My_Servo(int pin);
+    bool isClosed();
     int connect(int pin);
     void setAngle(int angle);
     int getAngle();

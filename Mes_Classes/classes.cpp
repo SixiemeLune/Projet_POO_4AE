@@ -78,6 +78,7 @@ void My_Servo::Init(){
     this -> time_on_us = (DEFAULT_MIN_PULSE_WIDTH+DEFAULT_MAX_PULSE_WIDTH)/2; // Duty cycle 50% le servo ne bouge pas
     this->angle = 0;
     this->connected = false;
+    this->closed = false ;
 }
 
 My_Servo::My_Servo(){
@@ -89,6 +90,12 @@ My_Servo::My_Servo(int pin){
     Init();
     this->PIN = pin;
 }
+
+
+bool My_Servo::isClosed(){
+    return this->closed;
+}
+
 
 int My_Servo::connect(int pin){
     if (this->connected == false){
@@ -117,8 +124,10 @@ int My_Servo::getAngle (){
 
 void My_Servo::Open_Blinds(){
     setAngle(90);
+    this->closed =false;
 }
 
 void My_Servo::Close_Blinds(){
     setAngle(0);
+    this->closed = true;
 }

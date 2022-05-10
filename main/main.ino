@@ -45,9 +45,15 @@ void loop() {
   float humidity;
   int luminosity = capteur2.getValue();
 
- 
-  
+  // ADAPTATION DU STORE A LA LUMINOSITE (seulement quand le store est ouvert)
 
+  if (servo1.isClosed() == false){
+    int angle;
+    angle = map(luminosity,0, 800, 90, 0);
+    servo1.setAngle(angle);
+  }
+  
+  
   // Attendre la disponibilité d'une mesure du capteur DHT
 
   if( measure_environment( &temperature, &humidity ) == true )
@@ -105,7 +111,10 @@ void loop() {
       Serial.println("Les volets sont fermés");
     }
     else {
-      servo1.Open_Blinds();
+      if (servo1.isClosed() == true){
+        servo1.Open_Blinds();
+      }
+      
       Serial.println("Les volets sont ouverts");
     }
 

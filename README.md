@@ -28,7 +28,7 @@ Il est convenable de déplacer ce répertoire dans le dossier des carnets de cro
 
 ## Matériel utilisé et exemple de PINs associées  
 
-Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans main.
+Une version avec trois types de capteurs, un servo et un affichage propre est dispo dans **main.ino**
 
 Materiel      	       | PIN
 ---------------------- | -------------
